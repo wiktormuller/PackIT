@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\PackIT.Shared.Abstractions\PackIT.Shared.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>
