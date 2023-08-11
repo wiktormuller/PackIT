@@ -7,7 +7,7 @@ namespace PackIT.Domain.Entities
 {
     public class PackingList : AggregateRoot<PackingListId>
     {
-        public Guid Id { get; private set; }
+        public PackingListId Id { get; private set; }
 
         private PackingListName _name; // Implementations details
         private Localization _localization;
@@ -29,6 +29,11 @@ namespace PackIT.Domain.Entities
             Id = id;
             _name = name;
             _localization = localization;
+        }
+
+        // For EF
+        private PackingList()
+        {
         }
 
         public void AddItem(PackingItem item)

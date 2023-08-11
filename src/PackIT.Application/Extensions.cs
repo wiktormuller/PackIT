@@ -18,7 +18,6 @@ namespace PackIT.Application
                 .WithSingletonLifetime());
 
             services.AddCommands();
-            services.AddQueries();
             return services;
         }
     }
