@@ -19,7 +19,7 @@ namespace PackIT.Domain.ValueObjects
         public static implicit operator double(Temperature temperature)
             => temperature.Value;
 
-        public static implicit operator Temperature(ushort temperature)
+        public static implicit operator Temperature(double temperature)
             => new(temperature);
     }
 }
