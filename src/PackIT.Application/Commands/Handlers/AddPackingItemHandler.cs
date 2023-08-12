@@ -5,7 +5,7 @@ using PackIT.Shared.Abstractions.Commands;
 
 namespace PackIT.Application.Commands.Handlers
 {
-    internal sealed class AddPackingItemHandler : ICommandHandler<AddPackingItem>
+    public sealed class AddPackingItemHandler : ICommandHandler<AddPackingItem>
     {
         private readonly IPackingListRepository _repository;
 

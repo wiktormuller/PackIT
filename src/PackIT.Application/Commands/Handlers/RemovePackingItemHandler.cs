@@ -4,7 +4,7 @@ using PackIT.Shared.Abstractions.Commands;
 
 namespace PackIT.Application.Commands.Handlers
 {
-    internal sealed class RemovePackingItemHandler : ICommandHandler<RemovePackingItem>
+    public sealed class RemovePackingItemHandler : ICommandHandler<RemovePackingItem>
     {
         private readonly IPackingListRepository _repository;
 

@@ -5,7 +5,7 @@ using PackIT.Infrastructure.EF.Models;
 
 namespace PackIT.Infrastructure.EF.Services
 {
-    internal sealed class PostgresPackingListReadService : IPackingReadService
+    internal sealed class PostgresPackingListReadService : IPackingListReadService
     {
         private readonly DbSet<PackingListReadModel> _packingList;
 

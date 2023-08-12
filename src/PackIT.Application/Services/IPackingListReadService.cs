@@ -1,6 +1,6 @@
 ﻿namespace PackIT.Application.Services
 {
-    public interface IPackingReadService
+    public interface IPackingListReadService
     {
         Task<bool> ExistsByNameAsync(string name);
     }

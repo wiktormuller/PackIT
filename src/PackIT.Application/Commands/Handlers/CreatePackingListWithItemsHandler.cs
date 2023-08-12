@@ -7,14 +7,14 @@ using PackIT.Shared.Abstractions.Commands;
 
 namespace PackIT.Application.Commands.Handlers
 {
-    internal sealed class CreatePackingListWithItemsHandler : ICommandHandler<CreatePackingListWithItems>
+    public sealed class CreatePackingListWithItemsHandler : ICommandHandler<CreatePackingListWithItems>
     {
-        private readonly IPackingReadService _packingReadService;
+        private readonly IPackingListReadService _packingReadService;
         private readonly IPackingListFactory _packingListFactory;
         private readonly IPackingListRepository _packingListRepository;
         private readonly IWeatherApiService _weatherApiService;
 
-        public CreatePackingListWithItemsHandler(IPackingReadService packingReadService,
+        public CreatePackingListWithItemsHandler(IPackingListReadService packingReadService,
             IPackingListFactory packingListFactory,
             IPackingListRepository packingListRepository,
             IWeatherApiService weatherApiService)
