@@ -1,6 +1,7 @@
 using PackIT.Application;
 using PackIT.Infrastructure;
 using PackIT.Shared.Services;
+using PackIT.Shared.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +12,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddAppInitializer();
+builder.Services.AddExceptionsHandling();
 
 var app = builder.Build();
 
@@ -22,9 +24,15 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseReDoc(c => // https://localhost:7250/api-docs/index.html
+    {
+        c.DocumentTitle = "REDOC API Documentation";
+        c.SpecUrl = "/swagger/v1/swagger.json";
+    });
 }
 
 app.UseHttpsRedirection();
+app.UseExceptionsHandling();
 
 app.UseAuthorization();
 
